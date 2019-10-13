@@ -2,7 +2,7 @@ package org.scalatra.test
 
 import java.io.InputStream
 
-import scala.collection.DefaultMap
+import scala.collection.Map
 
 case class ResponseStatus(code: Int, message: String)
 
@@ -25,7 +25,7 @@ abstract class ClientResponse {
 
   def status = statusLine.code
 
-  val header = new DefaultMap[String, String] {
+  val header = new Map[String, String] {
     def get(key: String) = {
       headers.get(key) match {
         case Some(values) => Some(values.head)
@@ -43,6 +43,10 @@ abstract class ClientResponse {
     def iterator = {
       headers.keys.map(name => (name -> this(name))).iterator
     }
+
+    override def -(key: String): Map[String, String] = ???
+
+    override def -(key1: String, key2: String, keys: String*): Map[String, String] = ???
   }
 
   def charset = {

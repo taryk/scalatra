@@ -110,7 +110,7 @@ trait ApiFormats extends ScalatraBase {
 
   private def parseAcceptHeader(implicit request: HttpServletRequest): List[String] = {
     def isValidQPair(a: Array[String]) = {
-      val validRange = Range.Double.inclusive(0, 1, 0.1)
+      val validRange = Range.BigDecimal.inclusive(0, 1, 0.1)
       a.length == 2 && a(0) == "q" && validRange.contains(a(1).toDouble)
     }
 
