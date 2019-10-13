@@ -3,10 +3,20 @@ import scala.xml._
 import java.net.URL
 import Dependencies._
 
+val unusedOptions = Def.setting(
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 11)) =>
+      Seq("-Ywarn-unused-import")
+    case _ =>
+      Seq("-Ywarn-unused:imports")
+  }
+)
+
 lazy val scalatraSettings = Seq(
   organization := "org.scalatra",
   crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12"),
   scalaVersion := crossScalaVersions.value.head,
+  scalacOptions ++= unusedOptions.value,
   scalacOptions ++= Seq(
     "-target:jvm-1.8",
     "-unchecked",
@@ -15,7 +25,6 @@ lazy val scalatraSettings = Seq(
     "-Xcheckinit",
     "-encoding", "utf8",
     "-feature",
-    "-Ywarn-unused-import",
     "-language:higherKinds",
     "-language:postfixOps",
     "-language:implicitConversions",
