@@ -5,7 +5,7 @@ import Dependencies._
 
 lazy val scalatraSettings = Seq(
   organization := "org.scalatra",
-  crossScalaVersions := Seq("2.12.10", "2.11.12"),
+  crossScalaVersions := Seq("2.13.1", "2.12.10", "2.11.12"),
   scalaVersion := crossScalaVersions.value.head,
   scalacOptions ++= Seq(
     "-target:jvm-1.8",

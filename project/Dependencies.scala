@@ -2,8 +2,8 @@ import sbt._
 import Keys._
 
 object Dependencies {
-  lazy val parserCombinators        =  "org.scala-lang.modules"  %% "scala-parser-combinators"   % "1.0.6"
-  lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.0.6"
+  lazy val parserCombinators        =  "org.scala-lang.modules"  %% "scala-parser-combinators"   % "1.1.2"
+  lazy val xml                      =  "org.scala-lang.modules"  %% "scala-xml"                  % "1.2.0"
   lazy val akkaActor                =  "com.typesafe.akka"       %% "akka-actor"                 % akkaVersion
   lazy val akkaTestkit              =  "com.typesafe.akka"       %% "akka-testkit"               % akkaVersion
   lazy val atmosphereRuntime        =  "org.atmosphere"          %  "atmosphere-runtime"         % "2.4.13"
@@ -37,7 +37,7 @@ object Dependencies {
   lazy val mockitoAll               =  "org.mockito"             %  "mockito-core"               % "2.7.22"
   lazy val scalate                  =  "org.scalatra.scalate"    %% "scalate-core"               % scalateVersion
   lazy val scalatest                =  "org.scalatest"           %% "scalatest"                  % scalatestVersion
-  lazy val scalaz                   =  "org.scalaz"              %% "scalaz-core"                % "7.2.14"
+  lazy val scalaz                   =  "org.scalaz"              %% "scalaz-core"                % "7.2.27"
   lazy val servletApi               =  "javax.servlet"           %  "javax.servlet-api"          % "3.1.0"
   lazy val springWeb                =  "org.springframework"     %  "spring-web"                 % "4.3.9.RELEASE"
   lazy val slf4jApi                 =  "org.slf4j"               %  "slf4j-api"                  % "1.7.25"
@@ -49,18 +49,18 @@ object Dependencies {
                                                                                   ).map(_        % specs2Version)
   lazy val testJettyServlet         =  "org.eclipse.jetty"       %  "test-jetty-servlet"         % jettyVersion
   lazy val testng                   =  "org.testng"              %  "testng"                     % "6.11" exclude("junit", "junit")
-  lazy val metricsScala             =  "nl.grons"                %% "metrics-scala"              % "3.5.9"
+  lazy val metricsScala             =  "nl.grons"                %% "metrics4-scala"             % "4.0.8"
   lazy val metricsServlets          =  "io.dropwizard.metrics"   %  "metrics-servlets"           % "3.2.3"
   lazy val metricsServlet           =  "io.dropwizard.metrics"   %  "metrics-servlet"            % "3.2.3"
   lazy val googleGuava              =  "com.google.guava"        % "guava"                       % "22.0"
   lazy val googleFindBugs           = "com.google.code.findbugs" % "jsr305"                      % "3.0.2"
 
-  private val akkaVersion             = "2.5.3"
+  private val akkaVersion             = "2.5.25"
   private val atmosphereCompatVersion = "2.0.1"
   private val httpcomponentsVersion   = "4.5.3"
   private val jettyVersion            = "9.4.6.v20170531"
-  private val json4sVersion           = "3.6.3"
-  private val scalateVersion          = "1.8.0"
-  private val scalatestVersion        = "3.0.3"
-  private val specs2Version           = "4.0.1"
+  private val json4sVersion           = "3.6.7"
+  private val scalateVersion          = "1.9.5"
+  private val scalatestVersion        = "3.0.8"
+  private val specs2Version           = "4.5.1"
 }
