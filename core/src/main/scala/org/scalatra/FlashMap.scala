@@ -27,7 +27,7 @@ class FlashMap extends MutableMapWithIndifferentAccess[Any] with Serializable {
    * Removes an entry from the flash map.  It is no longer available for this
    * request or the next.
    */
-  def -=(key: String): FlashMap.this.type = {
+  override def -=(key: String): FlashMap.this.type = {
     m -= key
     this
   }
